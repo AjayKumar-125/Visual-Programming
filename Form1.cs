@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp4
+namespace WindowsFormsApp5
 {
     public partial class Form1 : Form
     {
@@ -17,43 +17,20 @@ namespace WindowsFormsApp4
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            BackColor = Color.Blue;
-            //this.WindowState = FormWindowState.Maximized;
+
+            //BackColor = Color.Turquoise;
+
+            int r, g, b;
+            Random random = new Random();
+            r = random.Next(0,255);
+            g = random.Next(0,255); 
+            b = random.Next(0,255); 
+            
+            
+            BackColor = Color.FromArgb(r, g, b);    
             WindowState = FormWindowState.Maximized;
-        }
-
-        
-
-        private void programAToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            new Form2().Show();
-            this.Hide();
-
-        }
-
-        private void porgramBToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new Form3().Show();
-            this.Hide();
-
-        }
-
-        private void quitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void Form1_Load_1(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Maximized;
-        }
-
-        private void calculatorToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new Form5().Show();
         }
     }
 }
