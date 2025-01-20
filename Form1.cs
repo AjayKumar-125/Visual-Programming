@@ -8,29 +8,56 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp5
+namespace Mid_Lab_Task_Oct_29_2024
 {
     public partial class Form1 : Form
     {
+        int hour = 0;
+        int mnt = 0;
+        int sec = 0;
+        
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
 
-            //BackColor = Color.Turquoise;
+            
+            timeWatch.Text = hour.ToString() + " : " + mnt.ToString() + " : " + sec.ToString();
+            sec = sec + 1;
+            if (sec>59)
+            {
+                sec = 0;
+                mnt = mnt + 1;
+                timeWatch.Text = hour.ToString() + ":" + mnt.ToString() + ":" + sec.ToString();
+            }
+            if (mnt > 59)
+            {
+                sec = 0;
+                mnt = 0;
+                hour = hour + 1;
+                timeWatch.Text = hour.ToString() + ":" + mnt.ToString() + ":" + sec.ToString();
+            }
+            if(hour>24)
+            {
+                sec = 0;
+                mnt = 0;
+                hour = 0;
+                timeWatch.Text = hour.ToString() + ":" + mnt.ToString() + ":" + sec.ToString();
+            }
 
-            int r, g, b;
-            Random random = new Random();
-            r = random.Next(0,255);
-            g = random.Next(0,255); 
-            b = random.Next(0,255); 
-            
-            
-            BackColor = Color.FromArgb(r, g, b);    
-            WindowState = FormWindowState.Maximized;
+
+
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            timer1.Interval = 100;
+            timer1.Start();
+
         }
     }
 }
