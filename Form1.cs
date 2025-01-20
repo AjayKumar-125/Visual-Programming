@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp2
+namespace WindowsFormsApp3
 {
     public partial class Form1 : Form
     {
@@ -20,7 +20,6 @@ namespace WindowsFormsApp2
         private void Form1_Load(object sender, EventArgs e)
         {
 
-           // write 
         }
     }
 }
