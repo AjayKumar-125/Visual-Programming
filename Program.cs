@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Mid_Lab_Task_Oct_29_2024
+namespace Practice
 {
     internal static class Program
     {

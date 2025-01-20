@@ -10,11 +10,28 @@ using System.Windows.Forms;
 
 namespace Practice
 {
-    public partial class Form1 : Form
+    public partial class ColorChanger : Form
     {
-        public Form1()
+        public ColorChanger()
         {
             InitializeComponent();
+        }
+
+        private void ColorChanger_Load(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int r, g, b;
+            Random random = new Random();
+            r = random.Next(0, 256);
+            g = random.Next(0, 256);
+            b = random.Next(0, 256);
+            this.BackColor = Color.FromArgb(r, g, b);
+
         }
 
         private void colorChangerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -30,13 +47,23 @@ namespace Practice
             this.Hide();
             GroupBox groupBox = new GroupBox();
             groupBox.Show();
+
         }
 
-        private void fileDialogToolStripMenuItem_Click(object sender, EventArgs e)
+        private void timerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FileDialog fileDialog = new FileDialog();
-            fileDialog.Show();
+            Timer timer = new Timer();
+            timer.Show();
+
+        }
+
+        private void pictureChangerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PictureChanger pictureChanger = new PictureChanger();
+            pictureChanger.Show();
+
         }
 
         private void dateTimePickerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -47,18 +74,11 @@ namespace Practice
 
         }
 
-        private void pictureChangerToolStripMenuItem_Click(object sender, EventArgs e)
+        private void fileDialogToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            PictureChanger pictureChanger = new PictureChanger();
-            pictureChanger.Show();
-        }
-
-        private void browserToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Browser browser = new Browser();
-            browser.Show();
+            FileDialog fileDialog = new FileDialog();
+            fileDialog.Show();
         }
     }
 }
